@@ -28,10 +28,6 @@ class App extends React.Component{
    
     // let td=response.data['data']
     let td =[]
-    let app_t = []
-    let coh_t = []
-
-   
     var row1Sum = this.state.aj_app_sum;
     var row2Sum = this.state.aj_coh_sum;
 
@@ -47,8 +43,7 @@ class App extends React.Component{
          
         });
                            
-                              app_t.push(temp1)
-                              coh_t.push(temp2)
+                           
                               let obj = {
                                 "name" : e['groups']['Campaign']['metadata']['name'],
                                 "aj_app" : temp1,
@@ -60,12 +55,8 @@ class App extends React.Component{
     
     this.setState({
                           data: td,
-                          aj_app_trend : app_t,
                           aj_app_sum: row1Sum,
-                          aj_coh_trend : coh_t,
                           aj_coh_sum: row2Sum,
-                          
-              
                       });
                 
   }
@@ -78,13 +69,13 @@ componentDidMount(){
 
   render() {
     const columns = [{  
-      Header: 'Campaign_Name',  
+      Header:() => <strong>Campaign_Name</strong>,  
       // accessor: 'groups.Campaign.metadata.name',
       accessor : 'name',
       maxWidth: 500
      }
      ,{  
-      Header:() => <div>aj_app_and_installs_Trends<br/>{this.state.aj_app_sum}</div>,  
+      Header:() => <div><strong>aj_app_and_installs_Trends<br/>{this.state.aj_app_sum}</strong></div>,  
       accessor: 'trend.aj_app_and_installs' ,
       Cell: props => { //use props.aj_app
         
@@ -94,7 +85,7 @@ componentDidMount(){
       }  
     }
      ,{
-     Header:() => <div>aj_coh_0w_and_real_acquisition_Trends<br/>{this.state.aj_coh_sum}</div>,
+     Header:() => <div><strong>aj_coh_0w_and_real_acquisition_Trends<br/><span color =''>{this.state.aj_coh_sum}</span></strong></div>,
      accessor: 'Tre' ,
      Cell: props => { //use props.aj_trends
       
@@ -107,12 +98,15 @@ componentDidMount(){
   ]
     
     return (
-        <div>
+        <div style={{
+          backgroundColor: '#f9f9f9'}}>
+          <h1 align = 'center' >Clarisights frontend-assignment</h1>
           <ReactTable  
       data={this.state.data}  
       columns={columns}  
       headerHeight={500}
       sortable = {false}
+      // showPagination={false}
       />
         </div>
          
