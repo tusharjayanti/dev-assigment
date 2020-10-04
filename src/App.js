@@ -101,7 +101,8 @@ componentDidMount(){
           <h1 align = 'center' >Clarisights frontend-assignment</h1>
           <ReactTable  
       data={this.state.data}  
-      columns={columns}  
+      columns={columns}
+      loading = {this.state.isLoading}
       headerHeight={500}
       sortable = {false}
       />
