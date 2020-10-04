@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/dev-assignment/static/css/main.15c8dc35.chunk.css",
+    "main.js": "/dev-assignment/static/js/main.ca96a158.chunk.js",
+    "main.js.map": "/dev-assignment/static/js/main.ca96a158.chunk.js.map",
+    "runtime-main.js": "/dev-assignment/static/js/runtime-main.5fcfd5e1.js",
+    "runtime-main.js.map": "/dev-assignment/static/js/runtime-main.5fcfd5e1.js.map",
+    "static/css/2.f2850afe.chunk.css": "/dev-assignment/static/css/2.f2850afe.chunk.css",
+    "static/js/2.e9b61eed.chunk.js": "/dev-assignment/static/js/2.e9b61eed.chunk.js",
+    "static/js/2.e9b61eed.chunk.js.map": "/dev-assignment/static/js/2.e9b61eed.chunk.js.map",
+    "index.html": "/dev-assignment/index.html",
+    "precache-manifest.b047ff9cb70247355ddff271541bb33f.js": "/dev-assignment/precache-manifest.b047ff9cb70247355ddff271541bb33f.js",
+    "service-worker.js": "/dev-assignment/service-worker.js",
+    "static/css/2.f2850afe.chunk.css.map": "/dev-assignment/static/css/2.f2850afe.chunk.css.map",
+    "static/css/main.15c8dc35.chunk.css.map": "/dev-assignment/static/css/main.15c8dc35.chunk.css.map",
+    "static/js/2.e9b61eed.chunk.js.LICENSE.txt": "/dev-assignment/static/js/2.e9b61eed.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5fcfd5e1.js",
+    "static/css/2.f2850afe.chunk.css",
+    "static/js/2.e9b61eed.chunk.js",
+    "static/css/main.15c8dc35.chunk.css",
+    "static/js/main.ca96a158.chunk.js"
+  ]
+}
