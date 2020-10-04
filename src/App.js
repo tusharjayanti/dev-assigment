@@ -15,7 +15,8 @@ class App extends React.Component{
       data:[],
       aj_app_sum: 0,
       aj_coh_sum: 0,
-      isLoading : false
+      isLoading: false
+
     }
   
   }
@@ -24,7 +25,8 @@ class App extends React.Component{
     this.setState({isLoading :true})
     const URL = '<some-url>';
     const response = await axios.get(URL)
-    
+    console.log(response.status)
+   
     let td =[]
     var row1Sum = this.state.aj_app_sum;
     var row2Sum = this.state.aj_coh_sum;
@@ -55,7 +57,7 @@ class App extends React.Component{
                           data: td,
                           aj_app_sum: row1Sum,
                           aj_coh_sum: row2Sum,
-                          isLoading : false
+                          isLoading: false
                       });
                 
   }
@@ -70,7 +72,7 @@ componentDidMount(){
     const columns = [{  
       Header:() => <strong>Campaign_Name</strong>,  
       accessor : 'name',
-      maxWidth: 500
+      maxWidth: 350
      }
      ,{  
       Header:() => <div><strong>aj_app_and_installs_Trends<br/>{this.state.aj_app_sum}</strong></div>,  
@@ -78,9 +80,10 @@ componentDidMount(){
       Cell: props => { //use props.aj_app
         
         return (
-         <Trend  data = {props.original.aj_app}/>   
+         <Trend  data = {props.original.aj_app}/>   // <Trend data = props.original.app1/>
         );
-      }  
+      },
+      maxWidth :350  
     }
      ,{
      Header:() => <div><strong>aj_coh_0w_and_real_acquisition_Trends<br/><span color =''>{this.state.aj_coh_sum}</span></strong></div>,
@@ -88,7 +91,7 @@ componentDidMount(){
      Cell: props => { //use props.aj_trends
       
       return (
-       <Trend  data = {props.original.aj_coh}/>  
+       <Trend  data = {props.original.aj_coh}/>   // <Trend data = props.original.app1/>
       );
     },
       maxWidth: 350
@@ -101,7 +104,7 @@ componentDidMount(){
           <h1 align = 'center' >Clarisights frontend-assignment</h1>
           <ReactTable  
       data={this.state.data}  
-      columns={columns}
+      columns={columns}  
       loading = {this.state.isLoading}
       headerHeight={500}
       sortable = {false}
