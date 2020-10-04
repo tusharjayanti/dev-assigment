@@ -15,7 +15,7 @@ class App extends React.Component{
       data:[],
       aj_app_sum: 0,
       aj_coh_sum: 0,
-
+      isLoading : false
     }
   
   }
@@ -25,8 +25,6 @@ class App extends React.Component{
     const URL = '<some-url>';
     const response = await axios.get(URL)
     
-   
-    // let td=response.data['data']
     let td =[]
     var row1Sum = this.state.aj_app_sum;
     var row2Sum = this.state.aj_coh_sum;
@@ -57,6 +55,7 @@ class App extends React.Component{
                           data: td,
                           aj_app_sum: row1Sum,
                           aj_coh_sum: row2Sum,
+                          isLoading : false
                       });
                 
   }
@@ -70,7 +69,6 @@ componentDidMount(){
   render() {
     const columns = [{  
       Header:() => <strong>Campaign_Name</strong>,  
-      // accessor: 'groups.Campaign.metadata.name',
       accessor : 'name',
       maxWidth: 500
      }
@@ -80,7 +78,7 @@ componentDidMount(){
       Cell: props => { //use props.aj_app
         
         return (
-         <Trend  data = {props.original.aj_app}/>   // <Trend data = props.original.app1/>
+         <Trend  data = {props.original.aj_app}/>   
         );
       }  
     }
@@ -90,7 +88,7 @@ componentDidMount(){
      Cell: props => { //use props.aj_trends
       
       return (
-       <Trend  data = {props.original.aj_coh}/>   // <Trend data = props.original.app1/>
+       <Trend  data = {props.original.aj_coh}/>  
       );
     },
       maxWidth: 350
@@ -106,7 +104,6 @@ componentDidMount(){
       columns={columns}  
       headerHeight={500}
       sortable = {false}
-      // showPagination={false}
       />
         </div>
          
