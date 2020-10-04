@@ -15,7 +15,6 @@ class App extends React.Component{
       data:[],
       aj_app_sum: 0,
       aj_coh_sum: 0,
-      isLoading: false
 
     }
   
@@ -57,7 +56,7 @@ class App extends React.Component{
                           data: td,
                           aj_app_sum: row1Sum,
                           aj_coh_sum: row2Sum,
-                          isLoading: false
+                        
                       });
                 
   }
@@ -104,8 +103,7 @@ componentDidMount(){
           <h1 align = 'center' >Clarisights frontend-assignment</h1>
           <ReactTable  
       data={this.state.data}  
-      columns={columns}  
-      loading = {this.state.isLoading}
+      columns={columns} 
       headerHeight={500}
       sortable = {false}
       />
