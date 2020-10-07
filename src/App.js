@@ -96,41 +96,20 @@ componentDidMount(){
       maxWidth: 350
      }
   ]
-    
-      if(!this.state.isLoading){
-        return (
-        <div style={{
-          backgroundColor: '#f9f9f9'}}>
-          <h1 align = 'center' >Clarisights frontend-assignment</h1>
-          <ReactTable  
-      data={this.state.data}  
-      columns={columns} 
-      // loading = {this.isLoading}
-      headerHeight={500}
-      sortable = {false}
-      />
-        </div> 
-    )}
-    
-    return (
-      <div style={{
-        backgroundColor: '#f9f9f9'}}>
-        
-        <h1 align = 'center' >Clarisights frontend-assignment</h1>
-        
-            <div class="container">
-              <div class="center">
-                  <p> Some async call in progress !</p>
-              </div>
-            </div>
-      
-      </div> 
-  
-    )
-
-
-  }
-  
+  return (
+    <div style={{
+      backgroundColor: '#f9f9f9'}}>
+      <h1 align = 'center' >Clarisights frontend-assignment</h1>
+      <ReactTable  
+  data={this.state.data}  
+  columns={columns} 
+  loading = {this.state.isLoading}
+  headerHeight={500}
+  sortable = {false}
+  />
+    </div> 
+)}
+   
   }
 
 
